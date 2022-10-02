@@ -1,6 +1,6 @@
 import BunBunLogo from "../../assets/logo-01.svg";
 
-const Navbar = ({ cartItems, newItem, setShowCart }) => {
+const Navbar = ({ setShowCart }) => {
   return (
     <header className="siteHeader">
       <img
@@ -17,22 +17,6 @@ const Navbar = ({ cartItems, newItem, setShowCart }) => {
           </div>
           <div id="cartItem">
             <span onClick={() => setShowCart(cart => !cart)}>Cart</span>
-            <div id="cartList">
-              <div>{`${cartItems.length} items`}</div>
-              <div>{`Total: $${cartItems.reduce((acc, obj) => {
-                return parseFloat(parseFloat(acc) + parseFloat(obj.price)).toFixed(2);
-              }, 0)}`}</div>
-            </div>
-            {newItem && <div id="cartPopup">
-              <div>Added to cart:</div>
-              <br />
-              <div>
-                <b>{newItem.type}</b>
-              </div>
-              <div>{`${newItem.glazing} glazing`}</div>
-              <div>{`Pack of ${newItem.packSize}`}</div>
-              <div>{`Price: $${newItem.price}`}</div>
-            </div>}
           </div>
         </nav>
         <hr />

@@ -9,6 +9,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
           return parseFloat(parseFloat(acc) + parseFloat(obj.price)).toFixed(2);
         }, 0)}`}</p>
       </div>
+      {cartItems.length === 0 && <p>The cart is empty!</p>}
       <div className="cartItemList">
         {cartItems.map((item, i) => {
           return (
